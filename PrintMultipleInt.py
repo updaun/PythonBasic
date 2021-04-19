@@ -1,34 +1,40 @@
 # 1~10000사이에서 3의 배수와 5의 배수를 한 줄에 10개씩 출력하고, 마지막에 3의 배수와 5의 배수 갯수를 출력하는 파이썬 스크립트
 
-count = 0
-multipleThree_count = 0
-multipleFive_count = 0
+# 문제 분석 )
 
-print("3의배수 출력")
-for i in range(1,10001):
-    if i % 3 == 0:
-        print(i, end ="\t")
-        count += 1
-    if count == 10:
-        print("")
-        count = 0
+# 출력 자료( 결과 ) : 1 ~ 10000사이의 3의 배수와 5의 배수 출력, 3의 배수와 5의 배수 개수
+# 알고리즘 설계 )
+
+# 0. 출력 자료 변수 정의
+# 1. 10000까지 반복한다.
+#     1.1 3의 배수와 5의 배수를 판별하여
+#     1.2 3의 배수와 5의 배수를 한 줄에 10개씩 출력한다.
+#     1.3 3의 배수와 5의 배수 개수를 계산한다.
+# 2. 3의 배수와 5의 배수 개수를 출력한다.
+# 3. 종료한다.
+
+# Symbolic Constant
+MAX = 1000
+MAX_LINE = 10
+
+# 출력 자료 저장 변수 정의
+multiple_3_5 = 0
+
+# 처리 자료 - 알고리즘을 표현하기 위해 구현시 추가된 변수
+line = 0
+
+# 1. 10000까지 반복한다.
+for i in range( 1, 10001 ):
+    # 1.1 3의 배수와 5의 배수를 판별한다.
+    if i % 3 == 0 or i % 5 == 0:
+        # 1.3 3의 배수와 5의 배수 개수를 계산한다.
+        multiple_3_5 += 1
         
-count = 0             
-print("\n5의배수 출력")
-for i in range(1,10001):
-    if i % 5 == 0:
-        print(i, end ="\t")
-        count += 1
-    if count == 10:
-        print("")
-        count = 0
+        # 1.2 3의 배수와 5의 배수를 한 줄에 10개씩 출력한다.
+        print( i, '\t', end = '' )
+        line += 1
+        if line % 10 == 0:
+            print()
 
-
-for i in range(1,10001):
-    if i % 3 == 0:
-        multipleThree_count += 1
-    elif i % 5 == 0:
-        multipleFive_count += 1  
-    i += 1
-    
-print("1 ~",i,"사이에서의 3의 배수는 ", multipleThree_count, " 개이고 와 5의 배수의 개수는 ", multipleFive_count," 개 입니다.")
+# 2. 3의 배수와 5의 배수 개수를 출력한다.            
+print( '\n\n1 ~ 10000사이의 3의 배수와 5의 배수 개수는 ', multiple_3_5, '개' )
