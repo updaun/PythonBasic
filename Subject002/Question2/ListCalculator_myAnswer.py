@@ -21,7 +21,7 @@ for i in range(0, len(number_list)-1):
     deviation_list.append(number_list[i]-number_avg) 
     square_deviation_list.append(deviation_list[i]*deviation_list[i])
     square_deviation_sum += square_deviation_list[i]
-    variance = square_deviation_sum / len(number_list)
+    variance = square_deviation_sum / (len(number_list)-1)
 
 print("평균 =",number_avg,"\n")
 print("편차 =",deviation_list,"\n")
