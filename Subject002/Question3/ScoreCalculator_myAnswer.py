@@ -8,8 +8,12 @@
 # lee		70 	70	70 	210	70.00		2
 
 num_subject = 3
+ranking = 1
 all_student_info = []
-for i in range(0, 3):
+
+num_student = int(input("학생의 수를 입력하세요 : "))
+
+for i in range(0, num_student):
     name = input("학생의 이름을 입력하세요 : ")
     subject1 = int(input("과목1 점수를 입력하세요 : "))
     subject2 = int(input("과목2 점수를 입력하세요 : "))
@@ -17,27 +21,20 @@ for i in range(0, 3):
     subject_sum = subject1+subject2+subject3
     subject_avg = subject_sum / num_subject
     student_info = [name, subject1, subject2,
-                    subject3, subject_sum, subject_avg]
+                    subject3, subject_sum, subject_avg, ranking]
     all_student_info.append(student_info)
 
-ranking_list = [all_student_info[0][-1],
-                all_student_info[1][-1], all_student_info[2][-1]]
+for i in range(0, num_student):
+    for j in range(0, num_student):
+        if all_student_info[i][-2] < all_student_info[j][-2]:
+            all_student_info[i][-1] = int(all_student_info[i][-1]) + 1
 
-for i in range(0, 3):
-    if all_student_info[i][-1] == max(ranking_list):
-        all_student_info[i].append(1)
-    elif all_student_info[i][-1] == min(ranking_list):
-        all_student_info[i].append(3)
-    else:
-        all_student_info[i].append(2)
+for x in range(0, num_student):
+    if all_student_info[x][-2] >= 90:
+        all_student_info[x].append("excellent")
+    elif all_student_info[x][-2] <= 60:
+        all_student_info[x].append("fail")
 
-for i in range(0, 3):
-    if all_student_info[i][-2] >= 90:
-        all_student_info[i].append("excellent")
-    elif all_student_info[i][-2] <= 60:
-        all_student_info[i].append("fail")
-
-for x in range(0, 3):
     for y in range(0, len(all_student_info[x])):
         print(all_student_info[x][y], end="\t")
     print()
