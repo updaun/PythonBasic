@@ -35,6 +35,6 @@ for x in range(0, num_student):
     elif all_student_info[x][-2] <= 60:
         all_student_info[x].append("fail")
 
-    for y in range(0, len(all_student_info[x])):
-        print(all_student_info[x][y], end="\t")
+    for y in all_student_info[x]:
+        print(y, end="\t")
     print()
