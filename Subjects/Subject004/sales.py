@@ -1,8 +1,7 @@
-global product_dict
-product_dict = {}
-
+product_dict = {} 
 
 def make_product_info():
+    global product_dict
     while True:
         product_name = input("품목명 : ")
 
@@ -26,6 +25,7 @@ def make_product_info():
 
 
 def make_sales_info():
+    global product_dict    
     while True:
         product_name = input("품목명 : ")
 
@@ -50,7 +50,7 @@ def make_sales_info():
     return product_dict
 
 
-def main():
+def main():  
     print("[ 품목 정보 입력 ]")
     make_product_info()
 
