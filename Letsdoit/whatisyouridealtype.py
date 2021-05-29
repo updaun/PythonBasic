@@ -21,20 +21,20 @@
 
 # method 1
 
-# total_dictionary = {}
+total_dictionary = {}
 
-# while True:
-#     question = input("질문을 입력해주세요 : ")
-#     if question == 'q':
-#         break
-#     else:
-#         total_dictionary[question] = ""
+while True:
+    question = input("질문을 입력해주세요 : ")
+    if question == 'q':
+        break
+    else:
+        total_dictionary[question] = ""
 
-# for i in total_dictionary:
-#     print(i)
-#     answer = input("답변을 입력해주세요 : ")
-#     total_dictionary[i] = answer
-# print(total_dictionary)
+for i in total_dictionary:
+    print(i)
+    answer = input("답변을 입력해주세요 : ")
+    total_dictionary[i] = answer
+print(total_dictionary)
 
 
 # method 2
@@ -52,4 +52,4 @@ for i in total_list:
     print(i["질문"])
     answer = input("답변을 입력해주세요 : ")
     i["답변"] = answer
-print(total_dictionary)
+print(total_list)
