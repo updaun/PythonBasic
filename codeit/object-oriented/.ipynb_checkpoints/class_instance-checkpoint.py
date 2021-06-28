@@ -1,5 +1,4 @@
 class User:
-    # def
     pass
 
 user1 = User()
@@ -18,9 +17,3 @@ user2.password = '98765'
 user3.name = '최지웅'
 user3.email = 'jiwoong@codeit.kr'
 user3.password = '78945'
-
-
-print(user1.email)
-print(user2.password)
-# 정의되지 않은 인스턴스 변수
-# print(user1.age)
