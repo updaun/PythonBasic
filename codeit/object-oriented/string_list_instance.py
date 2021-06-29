@@ -1,3 +1,5 @@
+# 클래스 메소드 사용 예제(문자열 분리 및 리스트로 클래스 변수 선언)
+
 class User:
     def __init__(self, name, email, password):
         self.name = name
@@ -10,6 +12,7 @@ class User:
         name = parameter_list[0]
         email = parameter_list[1]
         password = parameter_list[2]
+        # 선언 후 리턴을 해줘야함!
         return cls(name, email, password)
 
     @classmethod

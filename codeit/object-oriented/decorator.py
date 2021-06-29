@@ -1,12 +1,14 @@
+# 데코레이터 사용 예제
+
 # 데코레이터 함수 선언
 def add_print_to(original):
     def wrapper():
         print('함수 시작')
         original()
         print('함수 끝')
-    return wrapper
+    return wrapper # 함수를 반환
 
-# 꾸며주는 
+# 꾸며주는 데코레이터 함수 연결
 @add_print_to
 def print_hello():
     print('안녕하세요!')

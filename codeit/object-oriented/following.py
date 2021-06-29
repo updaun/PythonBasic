@@ -1,3 +1,5 @@
+# 팔로잉 기능 구현 예제
+
 class User:
     # 인스턴스 변수 설정
     def __init__(self, name, email, password):
@@ -11,6 +13,7 @@ class User:
     # 팔로우
     def follow(self, another_user):
         self.following_list.append(another_user)
+        # 이 부분이 조금 특이함
         another_user.followers_list.append(self)
 
     # 내가 몇 명을 팔로우하는지 리턴

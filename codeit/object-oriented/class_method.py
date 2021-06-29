@@ -1,3 +1,5 @@
+# 클래스 메소드 사용 예제
+
 class User:
     # 클래스 변수 선언
     count = 0
@@ -15,7 +17,7 @@ class User:
 
     # 특수 메소드, double underscore -> dunder method
     # 특정 상황에서 자동으로 호출 (print 함수를 호출할 때)
-    def __str__(self) -> str:
+    def __str__(self):
         return "사용자 : {}, 이메일 : {}, 비밀번호 : ******".format(self.name, self.email)
 
     # 클래스 메소드 생성, 첫 번째 파라미터로 클래스가 자동 전달 

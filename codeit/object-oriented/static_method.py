@@ -1,3 +1,5 @@
+# 정적 메소드 사용 예제
+
 class User:
     count = 0
     

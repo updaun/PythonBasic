@@ -1,3 +1,5 @@
+# 특수 메소드 __str__ 사용 예제
+
 class User:
     # 유저 인스턴스의 모든 변수를 지정해주는 메소드
     def __init__(self, name, email, pw):

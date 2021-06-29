@@ -1,3 +1,5 @@
+# 특수 메소드 __init__ 사용 예제
+
 class User:
     # Magic method, special method, 특정 상황에서 자동으로 호출
     # 인스턴스가 생성될 때 자동으로 호출
