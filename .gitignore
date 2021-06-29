@@ -1,9 +1,3 @@
-/jupyter_notebooks/Python/.ipynb_checkpoints
+.ipynb_checkpoints
 
-/jupyter_notebooks/NumPy/.ipynb_checkpoints
-
-/jupyter_notebooks/Pandas/.ipynb_checkpoints
-
-/jupyter_notebooks/AI_Military_Academy/.ipynb_checkpoints
-
-/codeit/data_science/.ipynb_checkpoints
+./__pycache__
