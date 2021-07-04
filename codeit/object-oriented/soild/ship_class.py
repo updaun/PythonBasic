@@ -1,4 +1,7 @@
-class Ship:
+# 단일 책임 원칙 예제
+
+# 적용 전
+class Ship: # God Object
     """배 클래스"""
     def __init__(self, fuel, fuel_per_hour, supplies, num_crew):
         """연료량, 시간당 연료 소비량, 물자량, 선원 수를 인스턴스 변수로 갖는다"""
@@ -46,3 +49,19 @@ class Ship:
             print("엔진을 {}시간 동안 돌립니다!".format(hours))
         else:
             print("연료가 부족하기 때문에 엔진 작동을 시작할 수 없습니다")
+
+ship = Ship(400, 10, 1000, 50)
+
+ship.load_fuel(10)
+
+ship.load_supplies(10)
+
+ship.load_crew(10)
+
+ship.distribute_supplies_to_crew()
+
+ship.run_engine_for_hours(4)
+
+ship.report_fuel()
+ship.report_supplies()
+ship.report_crew()
