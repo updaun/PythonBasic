@@ -50,18 +50,21 @@ class Ship: # God Object
         else:
             print("연료가 부족하기 때문에 엔진 작동을 시작할 수 없습니다")
 
+# 선박 인스턴스 생성
 ship = Ship(400, 10, 1000, 50)
 
+# 선박 승선, 물자 및 연료 재보급
 ship.load_fuel(10)
-
 ship.load_supplies(10)
-
 ship.load_crew(10)
 
+# 물자 배분
 ship.distribute_supplies_to_crew()
 
+# 엔진 4시간 작동
 ship.run_engine_for_hours(4)
 
+# 선박 상태 보고
 ship.report_fuel()
 ship.report_supplies()
 ship.report_crew()

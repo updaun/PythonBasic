@@ -86,3 +86,22 @@ class SupplyHold:
     def report_supplies(self):
         """물자량 보고 메소드"""
         print("현재 물자는 {}명분이 남아 있습니다".format(self.supplies))
+
+# 선박 인스턴스 생성
+ship = Ship(400, 10, 1000, 50)
+
+# 선박 승선, 물자 및 연료 재보급
+ship.fuel_tank.load_fuel(10)
+ship.supply_hold.load_supplies(10)
+ship.crew_manager.load_crew(10)
+
+# 물자 배분
+ship.supply_hold.distribute_supplies_to_crew()
+
+# 엔진 4시간 작동
+ship.engine.run_for_hours(4)
+
+# 선박 상태 보고
+ship.fuel_tank.report_fuel()
+ship.supply_hold.report_supplies()
+ship.crew_manager.report_crew()
