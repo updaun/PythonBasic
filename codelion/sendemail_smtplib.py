@@ -3,6 +3,7 @@ import smtplib
 from email.message import EmailMessage
 import os
 from pathlib import Path
+import imghdr
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,19 +39,29 @@ message["From"] = str(GOOGLE_ID)
 message["To"] = str(OTHER_ID)
 
 # 이미지 파일 읽기
-image = open("codelion/image/walle.jpg", "rb")
+# image = open("codelion/image/walle.jpg", "rb")
+# image.read()
 
-image.read()
+# 이미지 파일 읽기(with)
+with open("codelion/image/walle.jpg", "rb") as image:
+    image_file = image.read()
+
+# 이미지 확장자 알기
+image_type = imghdr.what('walle', image_file)
+
+# 이미지 파일을 메일에 포함시키기
+message.add_attachment(image_file, maintype='image',subtype=image_type)
+
 # 서버에 연결
-# smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
+smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
 
 # 로그인 테스트
-# print(smtp.login(GOOGLE_ID, GOOGLE_PASSWORD))
+print(smtp.login(GOOGLE_ID, GOOGLE_PASSWORD))
 
 # 로그인
-# smtp.login(GOOGLE_ID, GOOGLE_PASSWORD)
+smtp.login(GOOGLE_ID, GOOGLE_PASSWORD)
 
 # 메일 보내기
-# smtp.send_message(message)
-# print("메일 전송 완료!")
-# smtp.quit()
+smtp.send_message(message)
+print("메일 전송 완료!")
+smtp.quit()
