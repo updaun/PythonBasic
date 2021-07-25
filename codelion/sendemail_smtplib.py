@@ -4,6 +4,7 @@ from email.message import EmailMessage
 import os
 from pathlib import Path
 import imghdr
+import re
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,6 +27,16 @@ OTHER_ID = google_list["OTHER_ID"]
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 465
+
+def sendEmail(addr):
+    # 이메일 유효성 검사 - 정규표현식
+    reg = "^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$"
+    if bool(re.match(reg, addr)):
+        # 메일 보내기
+        smtp.send_message(message)
+        print("정상적으로 메일이 전송 되었습니다.")
+    else:
+        print("유효한 이메일 주소가 아닙니다.")
 
 # 메세지 생성
 message = EmailMessage()
@@ -61,7 +72,7 @@ print(smtp.login(GOOGLE_ID, GOOGLE_PASSWORD))
 # 로그인
 smtp.login(GOOGLE_ID, GOOGLE_PASSWORD)
 
-# 메일 보내기
-smtp.send_message(message)
-print("메일 전송 완료!")
+# 메일을 보내는 sendEmail 함수 호출 및 실행
+sendEmail(str(OTHER_ID))
+
 smtp.quit()
