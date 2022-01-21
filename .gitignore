@@ -7,3 +7,8 @@ djangoProject/
 .env
 
 .google_info
+
+log
+
+test.txt
+count_log.txt
