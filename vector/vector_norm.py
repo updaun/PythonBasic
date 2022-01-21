@@ -16,8 +16,10 @@ test_vector = np.array([-6,-8])
 
 l1_value = l1_norm(test_vector)
 l2_value = l2_norm(test_vector)
+numpy_l2_value = np.linalg.norm(test_vector)
 print("test_vector :", test_vector)
 print("l1_value :",l1_value,"\nl2_value :", l2_value)
+print("numpy_l2_value :",numpy_l2_value)
 
 # Vector 사이의 거리
 x = np.array([-3, 0])
