@@ -1,6 +1,6 @@
 import os
 
-directory_path = "file_handing/log"
+directory_path = "file_handling/log"
 
 if not os.path.isdir(directory_path):
     os.mkdir(directory_path)

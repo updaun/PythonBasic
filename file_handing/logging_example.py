@@ -17,7 +17,7 @@ if __name__ == '__main__':
     logger.setLevel(logging.INFO)
 
     steam_handler = logging.FileHandler(
-        "file_handing/log/my.log", mode="w", encoding="utf8")
+        "file_handling/log/my.log", mode="w", encoding="utf8")
     logger.addHandler(steam_handler)
 
     logger.debug("틀렸어!")
